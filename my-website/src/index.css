@@ -35,7 +35,7 @@ html , body{
     top: 0;
     padding-top: 67px;
     background: var(--light-blue);
-    opacity: 0.7;
+    opacity: 0.9;
     color: #FFFFFF;
     z-index: 1;
     text-align: center;

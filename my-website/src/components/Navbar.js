@@ -1,4 +1,4 @@
-import React , { useState , useEffect } from 'react';
+import React , { useState , useEffect , useRef } from 'react';
 import logo from '../images/logo.png';
 import bars from '../images/bars.svg';
 import close from '../images/close.svg';
@@ -9,9 +9,12 @@ import { ReactComponent as Linkedin } from '../images/linkedin.svg';
 function Navbar(){
     const [ isHidden , setIsHidden ] = useState(true);
     const unfoldNavbar = () => { setIsHidden(!isHidden); }
+    const ulRef = useRef(null);
+    
+    // above 768px , unfold menu should disapper
     useEffect( () => {
-        window.addEventListener( 'resize' , () => {
-            if( window.innerWidth > 767 ) setIsHidden(true); })
+        window.addEventListener('resize' , () => {
+            if( window.innerWidth >= 768 ) setIsHidden(true); })
     })
 
     return (
@@ -21,7 +24,7 @@ function Navbar(){
                 <img src={logo} alt="" className='cursor-pointer'/>
             </a>
 
-            <ul className={`text-gray menu ${ isHidden ? 'w-0' : 'w-1/2'} transition-width duration-300`}>
+            <ul className={`text-gray menu ${ isHidden ? 'w-0 overflow-hidden' : 'w-1/2'} transition-width duration-300`}>
                 <li>
                     <button className='menu__item menu__item--hover menu__item--active'>About</button>
                 </li>
@@ -51,7 +54,7 @@ function Navbar(){
             <img 
                 src={ isHidden ? bars : close }
                 onClick={unfoldNavbar}
-                className={`w-6 h-6 cursor-pointer md:hidden z-10 ${ isHidden ? null : 'hover:scale-125' }`}
+                className={`w-6 h-6 cursor-pointer md:hidden z-10 ${ isHidden ? null : 'fixed right-5 hover:scale-125' }`}
                 alt=""/>
         </nav>
     </>
