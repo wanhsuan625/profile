@@ -1,8 +1,145 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap');
+
+:root {
+    --pink: #D46A98;
+    --light-blue: #86B9DF;
+    --gray: #A8A8A8;
+}
 
 *{
     position: relative;
     box-sizing: border-box;
+}
+html , body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
+    font-size: 16px;
+    font-family: 'Kanit' , sans-serif;
+    color: var(--gray);
+
+    @media screen and (min-width: 1024px) {
+        font-size: 18px;
+    }
+}
+
+/* ----- NAVBAR MENU ----------------------------------------- */
+.menu{
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-top: 67px;
+    background: var(--light-blue);
+    opacity: 0.7;
+    color: #FFFFFF;
+    z-index: 1;
+    text-align: center;
+}
+.menu__item ,
+.menu__button{
+    width: 90%;
+    padding: 8px 0;
+    margin: 8px auto;
+    border-bottom: 1px solid #FFFFFF70;
+}
+.menu__item::after ,
+.menu__button::after{
+    content: '';
+    height: 2px;
+    width: 0%;
+    background-color: #33415580;
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    transition: width 0.2s;
+}
+.menu__item::before,
+.menu__button::before{
+    content: '';
+    height: 2px;
+    width: 0%;
+    background-color: #33415580;
+    position: absolute;
+    right: 50%;
+    bottom: -1px;
+    transition: width 0.25s;
+}
+.menu__item:hover::after ,
+.menu__item:hover::before ,
+.menu__button:hover::after ,
+.menu__button:hover::before{
+    width: 50%;
+}
+.menu__item--hover:hover,
+.menu__button--hover:hover {
+    @apply text-slate-700;
+}
+.cv:hover .downloadIcon--hover {
+    fill: #334155;
+}
+@media screen and (min-width:768px){
+    .menu{
+        position: relative;
+        padding-top: 0;
+        display: flex;
+        justify-content: flex-end;
+        width: calc( 2 / 3 * 100% );
+        gap: 20px;
+        background-color: #FFFFFF;
+        color: #A8A8A8;
+    }
+    .menu__item{
+        width: 100%;
+        padding: 10px 12px;
+        padding-bottom: 0;
+        margin: 0;
+    }
+    .menu__item--hover:hover{
+        color: var(--pink);
+    }
+    .menu__item::after , .menu__item::before{
+        background-color: var(--pink);
+    }
+    .cv:hover .downloadIcon--hover{
+        fill:var(--pink);
+    }
+    .menu__button{
+        width: 100%;
+        margin: 0;
+        padding: 6px 8px;
+        background-color: var(--light-blue);
+        color: #FFFFFF;
+        border-radius: 5px;
+        border: 2px solid var(--light-blue);
+    }
+    .menu__button--hover:hover{
+        background-color: #FFF;
+        color: var(--light-blue);
+    }
+    .menu__button--active:active{
+        transform: translateY(2px);
+    }
+    .menu__button::after ,
+    .menu__button::before {
+        height: 0;
+    }
+}
+/* ----- NAVBAR MENU END ----------------------------------------------------- */
+
+.btn{
+    background-color: var(--light-blue);
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: 2px solid var(--light-blue);
+    padding: 8px 16px;
+}
+.btn--hover:hover{
+    background-color: transparent;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    color: var(--light-blue);
 }

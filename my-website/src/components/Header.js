@@ -1,11 +1,12 @@
 import React from 'react';
+import background from '../images/background.jpg';
 
-function Header(){
+function Header() {
     return (
     <>
-        <section>
-            
-        </section>
+        <header>
+            <img src={background} className='grayscale' alt="" />
+        </header>
     </>
     )
 }
