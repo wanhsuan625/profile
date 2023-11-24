@@ -30,7 +30,7 @@ function Header() {
                     <a href="https://github.com/wanhsuan625" target='_blank'>
                         <Github className='h-9 w-9 cursor-pointer hover:fill-pink'/>
                     </a>
-                    <a href="#" target='_blank'>
+                    <a href="https://www.linkedin.com/in/wanhsuan-chan-4942ab237/" target='_blank'>
                         <Linkedin className='h-9 w-9 cursor-pointer hover:fill-pink'/>
                     </a>
                 </div>

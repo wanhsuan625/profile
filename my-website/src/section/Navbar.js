@@ -1,4 +1,4 @@
-import React , { useState , useEffect , useRef } from 'react';
+import React , { useState , useEffect } from 'react';
 import logo from '../images/logo.png';
 import bars from '../images/bars.svg';
 import close from '../images/close.svg';
@@ -50,10 +50,10 @@ function Navbar(){
 
 
                 <div className={` ${ isHidden ? 'hidden' : 'flex' } gap-8 justify-center mt-24 md:hidden`}>
-                    <a href="#" target='_blank'>
+                    <a href="https://github.com/wanhsuan625" target='_blank'>
                         <Github className='w-8 h-8 hover:fill-slate-700'/>
                     </a>
-                    <a href="#" target='_blank'>
+                    <a href="https://www.linkedin.com/in/wanhsuan-chan-4942ab237/" target='_blank'>
                         <Linkedin className='w-8 h-8 hover:fill-slate-700'/>
                     </a>
                 </div>
