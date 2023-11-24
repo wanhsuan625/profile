@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;500;800&display=swap');
 
 :root {
     --pink: #D46A98;
@@ -17,17 +17,11 @@ html , body{
     padding: 0;
     margin: 0;
     height: 100%;
-
-    font-size: 16px;
+    
     font-family: 'Kanit' , sans-serif;
     color: var(--gray);
-
-    @media screen and (min-width: 1024px) {
-        font-size: 18px;
-    }
 }
-
-/* ----- NAVBAR MENU ----------------------------------------- */
+/* ----- NAVBAR MENU ----- */
 .menu{
     height: 100%;
     position: fixed;
@@ -131,15 +125,11 @@ html , body{
 }
 /* ----- NAVBAR MENU END ----------------------------------------------------- */
 
-.btn{
-    background-color: var(--light-blue);
-    color: #FFFFFF;
-    border-radius: 5px;
-    border: 2px solid var(--light-blue);
-    padding: 8px 16px;
-}
-.btn--hover:hover{
-    background-color: transparent;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    color: var(--light-blue);
+/* ----- HEADER ------ */
+.header__background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('./images/background.jpg');
+    background-size: cover;
 }
