@@ -14,8 +14,8 @@ function Footer() {
                     <div className="flex-col gap-y-4">
                         <li className="mb-3"><a href="#about" className="hover:text-white">About</a></li>
                         <li className="mb-3"><a href="#project" className="hover:text-white">Porject</a></li>
-                        <li className="flex items-center cursor-pointer gap-1 mb-3">
-                            <Download className='w-4 h-4 fill-gray'/>CV
+                        <li className="w-10 flex items-center cursor-pointer gap-1 mb-3 footer__cv hover:text-white">
+                            <Download className='w-4 h-4 fill-gray footer__cv-icon--hover'/>CV
                         </li>
                         <li className="mb-12 md:mb-0"><a href="#contact" className="hover:text-white">Contact</a></li>
                     </div>
@@ -23,9 +23,9 @@ function Footer() {
 
                 <ul>
                     <h1 className="text-light-blue text-xl font-bold mb-4 lg:text-2xl">Contact</h1>
-                    <li className="mb-12">
-                        <a href="mailto:bna279@gmail.com" className="flex gap-2 items-center">
-                            <Email className="w-5 h-5 fill-gray"/>bna279@gmail.com
+                    <li className="mb-12 ">
+                        <a href="mailto:bna279@gmail.com" className="flex gap-2 items-center footer__email hover:text-white">
+                            <Email className="w-5 h-5 fill-gray footer__email-icon--hover"/>bna279@gmail.com
                         </a>
                     </li>
                 </ul>
