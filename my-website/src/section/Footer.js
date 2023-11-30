@@ -1,7 +1,50 @@
 import React from "react";
+import { ReactComponent as Download } from '../images/download.svg';
+import { ReactComponent as Email } from '../images/email.svg';
+import { ReactComponent as Github } from '../images/github.svg';
+import { ReactComponent as Linkedin } from '../images/linkedin.svg';
 
 function Footer() {
+    return(
+    <>
+        <footer className="bg-black">
+            <div className="text-gray p-8 xs:flex xs:justify-between md:px-20 max-w-300 mx-auto">
+                <ul>
+                    <h1 className="text-light-blue text-xl font-semibold mb-4 lg:text-2xl">Quick Link</h1>
+                    <div className="flex-col gap-y-4">
+                        <li className="mb-3"><a href="#about" className="hover:text-white">About</a></li>
+                        <li className="mb-3"><a href="#project" className="hover:text-white">Porject</a></li>
+                        <li className="flex items-center cursor-pointer gap-1 mb-3">
+                            <Download className='w-4 h-4 fill-gray'/>CV
+                        </li>
+                        <li className="mb-12 md:mb-0"><a href="#contact" className="hover:text-white">Contact</a></li>
+                    </div>
+                </ul>
 
+                <ul>
+                    <h1 className="text-light-blue text-xl font-bold mb-4 lg:text-2xl">Contact</h1>
+                    <li className="mb-12">
+                        <a href="mailto:bna279@gmail.com" className="flex gap-2 items-center">
+                            <Email className="w-5 h-5 fill-gray"/>bna279@gmail.com
+                        </a>
+                    </li>
+                </ul>
+
+                <div>
+                    <h1 className="text-light-blue text-xl font-bold mb-4 lg:text-2xl">Social</h1>
+                    <div className="flex gap-5 mt-2 xs:gap-7">
+                        <a href="https://github.com/wanhsuan625" target='_blank'>
+                            <Github className='w-6 h-6 fill-gray hover:fill-white'/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/wanhsuan-chan-4942ab237/" target='_blank'>
+                            <Linkedin className='w-6 h-6 fill-gray hover:fill-white'/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </>
+    )
 }
 
 export default Footer;
