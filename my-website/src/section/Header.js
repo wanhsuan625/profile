@@ -7,7 +7,7 @@ import { ReactComponent as Linkedin } from '../images/linkedin.svg';
 function Header() {
     return (
     <>
-        <header className='max-w-7xl mx-auto md:flex md:justify-between mt-13 md:mt-16 mb-20 md:mb-36 lg:mb-48'>
+        <header className='max-w-300 mx-auto md:flex md:justify-between mt-13 md:mt-16 mb-20 md:mb-36 lg:mb-48'>
             <div className='header__background'></div>
             <article className='text-center text-white text-sm py-10 px-8 max-w-md m-auto
                                 md:py-12 md:px-3 md:text-left md:mx-8 lg:max-w-xl lg:pl-14 lg:pb-16 lg:pt-18'>
