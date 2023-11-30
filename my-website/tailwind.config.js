@@ -15,6 +15,7 @@ module.exports = {
         '75': '300px',
         '100': '400px',
         '110': '440px',
+        '125': '500px',
       },
       colors: {
         'pink': '#D46A98',
@@ -48,6 +49,9 @@ module.exports = {
       },
       minHeight: {
         '18' : '72px',
+      },
+      maxWidth: {
+        '300' : '1200px',
       }
     },
   },
