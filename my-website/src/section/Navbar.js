@@ -26,8 +26,8 @@ function Navbar(){
 
     return (
     <>
-    <section className={`w-full fixed top-0 z-10 bg-white shadow-lg`}>
-        <nav className='max-w-7xl mx-auto flex justify-between items-center px-5 py-3 xl:px-10 '>
+    <section className={`w-full fixed top-0 z-50 bg-white shadow-lg`}>
+        <nav className='max-w-300 mx-auto flex justify-between items-center px-5 py-3 xl:px-0'>
             <a className='w-40 md:w-48 lg:w-60 grid place-content-center cursor-auto' href='#'>
                 <img src={logo} alt="" className='cursor-pointer'/>
             </a>
@@ -45,7 +45,9 @@ function Navbar(){
                     </a>
                 </li>
                 <li>
-                    <button className='menu__button menu__button--hover menu__button--active'>Get in Touch</button>
+                    <a href="#contact">
+                        <button className='menu__button menu__button--hover menu__button--active'>Get in Touch</button>
+                    </a>
                 </li>
 
 
