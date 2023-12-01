@@ -5,6 +5,7 @@ import close from '../images/close.svg';
 import { ReactComponent as Download } from '../images/download.svg';
 import { ReactComponent as Github } from '../images/github.svg';
 import { ReactComponent as Linkedin } from '../images/linkedin.svg';
+import cv from '../cv/Bonnie Chan.pdf';
 
 function Navbar(){
     const [ isHidden , setIsHidden ] = useState(true);
@@ -40,7 +41,7 @@ function Navbar(){
                     <a href='#project' className='block menu__item menu__item--hover menu__item--active'>Project</a>
                 </li>
                 <li>
-                    <a href="#" className='cv menu__item menu__item--hover menu__item--active flex justify-center items-center gap-1'>
+                    <a href={cv} download className='cv menu__item menu__item--hover menu__item--active flex justify-center items-center gap-1 cursor-pointer'>
                         <Download className='w-4 h-4 downloadIcon--hover md:fill-gray'/>CV
                     </a>
                 </li>
