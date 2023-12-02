@@ -76,7 +76,7 @@ html , body{
 .cv:hover .downloadIcon--hover {
     fill: #334155;
 }
-/* ----- NAVBAR MENU END ----------------------------------------------------- */
+
 
 /* ----- HEADER ------ */
 .header__background{
@@ -85,6 +85,29 @@ html , body{
     position: absolute;
     background-image: url('./images/background.jpg');
     background-size: cover;
+}
+
+/* ----- PROJECT TAGS ----- */
+.project__cover:hover div{
+    top: 0%;
+    left: 0%;
+    transition: all 0.3s ease;
+}
+.project__tag-top{
+    top: -100%;
+    left: 0%;
+}
+.project__tag-bottom{
+    top: 100%;
+    left: 0%;
+}
+.project__tag-right{
+    top: 0%;
+    left: 100%;
+}
+.project__tag-left{
+    top: 0%;
+    left: -100%;
 }
 
 /* ----- CONTACT BACKGROUND ----- */
