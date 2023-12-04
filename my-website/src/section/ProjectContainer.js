@@ -25,6 +25,7 @@ function Showcase(){
                         description={project.description}
                         liveSite={project.liveSite}
                         codePage={project.codePage}
+                        tags={project.skill}
                     />
                 ))}
             </div>
