@@ -93,21 +93,15 @@ html , body{
     left: 0%;
     transition: all 0.3s ease;
 }
-.project__tag-top{
-    top: -100%;
-    left: 0%;
+.project__tag-container{
+    background-color: rgba(0 , 0 , 0 , .5);
 }
-.project__tag-bottom{
-    top: 100%;
-    left: 0%;
-}
-.project__tag-right{
-    top: 0%;
-    left: 100%;
-}
-.project__tag-left{
-    top: 0%;
-    left: -100%;
+.project__tag{
+    background-color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    color: var(--pink);
+    font-weight: 500;
 }
 
 /* ----- CONTACT BACKGROUND ----- */
