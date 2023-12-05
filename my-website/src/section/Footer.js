@@ -53,7 +53,7 @@ function Footer() {
                 <hr className="w-1/2"/>
             </div>
 
-            <p className="text-center pb-8">© Copyright 2023 | Bonnie Chan</p>
+            <p className="text-center pb-8">Copyright © 2023 | Bonnie Chan</p>
         </footer>
     </>
     )
