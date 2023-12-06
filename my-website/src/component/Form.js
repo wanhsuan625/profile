@@ -1,4 +1,4 @@
-import React , { useState , useEffect ,useRef } from 'react';
+import React , { useState , useEffect } from 'react';
 import { ReactComponent as Sendemail } from '../images/send.svg';
 import emailjs from '@emailjs/browser';
 import emailjsConfig from '../emailjsConfig';
@@ -6,9 +6,10 @@ import emailjsConfig from '../emailjsConfig';
 function Form(){
     const { SERVICE_ID , TEMPLATE_ID , PUBLIC_KEY } = emailjsConfig;
     const regEmail = new RegExp("^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
-    const [ validateName , setValidateName ] = useState();
-    const [ validateEmail , setValidateEmail ] = useState();
-    const [ validateMessage , setValidateMessage ] = useState();    // validateName , validateEmail , validateMessage 初始值設定為 undefined 讓 isButtonDisabled 變數比較好去變化
+    const [ isEmailValid , setIsEmailValid ] = useState(true);
+    const [ isNameEmpty , setIsNameEmpty ] = useState();
+    const [ isEmailEmpty , setIsEmailEmpty ] = useState();
+    const [ isMessageEmpty , setIsMessageEmpty ] = useState();    // isNameEmpty , isEmailEmpty , isMessageEmpty 初始值設定為 undefined 讓 isButtonDisabled 變數比較好去變化
     const [ isButtonDisabled , setIsButtonDisabled ] = useState(true);
     const [ loading , setLoading ] = useState(undefined);
     const [ form , setForm ] = useState({
@@ -22,15 +23,21 @@ function Form(){
         state( !value || value.length < 1 );         // input 空白 -> 錯誤訊息要出現
     }
 
-    // 將 Name , Email , Message 的值寫入 form 變數中
     const handleChange = (e) => {
         const { name , value } = e.target;
         
         // 判斷 name , email , message 是否空白
-        if ( name === "name" ) inputEmpty( value , setValidateName );
-        else if ( name === "email" ) inputEmpty( value , setValidateEmail );
-        else if ( name === "message" ) inputEmpty( value , setValidateMessage );
+        if ( name === "name" ) inputEmpty( value , setIsNameEmpty );
+        else if ( name === "message" ) inputEmpty( value , setIsMessageEmpty );
+        else if ( name === "email" ) {
+            inputEmpty( value , setIsEmailEmpty );
+            
+            // email 要符合格式
+            const emailTest = regEmail.test(value);
+            setIsEmailValid(emailTest);
+        };
 
+        // 將 Name , Email , Message 的值寫入 form 變數中
         setForm({
             ...form,
             [ name ] : value,
@@ -39,12 +46,12 @@ function Form(){
 
     // Sumbit button 根據 input 的內容作變化
     useEffect( () => {
-        // 一開始validateName,validateEmail,validateMessage是undefined(false)，會影響到isButtonDisabled直接變成false，所以要避免
-        if ( validateName === undefined || validateEmail === undefined || validateMessage === undefined ) return;
+        // 一開始isNameEmpty,isEmailEmpty,isMessageEmpty是undefined(false)，會影響到isButtonDisabled直接變成false，所以要避免
+        if ( isNameEmpty === undefined || isEmailEmpty === undefined || isMessageEmpty === undefined ) return;
         
         // input都是(false , 也就是非空白)，button的disabled屬性才能轉為flase
-        setIsButtonDisabled( validateName || validateEmail || validateMessage );
-    } , [ validateName , validateEmail , validateMessage ] );
+        setIsButtonDisabled( isNameEmpty || isEmailEmpty || !isEmailValid || isMessageEmpty );
+    } , [ isNameEmpty , isEmailEmpty , isEmailValid , isMessageEmpty ] );
 
 
     //  透過emailjs傳送信
@@ -83,7 +90,7 @@ function Form(){
                     className="w-full font-light py-2 px-4 border border-gray rounded-md mt-1.5 mb-6"
                     onChange={handleChange}
                 />
-                <span className={`${ validateName ? "absolute" : "hidden" } text-sm text-red-600 font-light left-2 top-19`}>* Field must not be empty.</span>
+                <span className={`${ isNameEmpty ? "absolute" : "hidden" } text-sm text-red-600 font-light left-2 top-19`}>* Field must not be empty.</span>
             </label>
             <label htmlFor="email" className='text-black font-medium'>Email
                 <input
@@ -95,7 +102,9 @@ function Form(){
                     className="w-full font-light py-2 px-4 border border-gray rounded-md mt-1.5 mb-6"
                     onChange={handleChange}
                 />
-                <span className={`${ validateEmail ? "absolute" : "hidden" } text-sm text-red-600 font-light left-2 top-19`}>* Field must not be empty.</span>
+                <span className={`${ isEmailEmpty ? "absolute" : ( isEmailValid ? "hidden" : "absolute" ) } text-sm text-red-600 font-light left-2 top-19`}>
+                    { isEmailEmpty ? "* Field must not be empty." : "* Must be a valid email address." }
+                </span>
             </label>
             <label htmlFor='message' className='text-black font-medium'>Message
                 <textarea
@@ -107,7 +116,7 @@ function Form(){
                     onChange={handleChange}
                 >
                 </textarea>
-                <span className={`${ validateMessage ? "absolute" : "hidden" } text-sm text-red-600 font-light left-2 top-32 lg:top-44`}>* Field must not be empty.</span>
+                <span className={`${ isMessageEmpty ? "absolute" : "hidden" } text-sm text-red-600 font-light left-2 top-32 lg:top-44`}>* Field must not be empty.</span>
             </label>
             <button
                 type="submit"
