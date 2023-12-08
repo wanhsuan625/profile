@@ -2,6 +2,9 @@ import React , { useState , useEffect } from 'react';
 import { ReactComponent as Sendemail } from '../images/send.svg';
 import emailjs from '@emailjs/browser';
 import emailjsConfig from '../emailjsConfig';
+import {ReactComponent as Close } from '../images/close.svg';
+import done from '../images/done.png';
+import error from '../images/error.png';
 
 function Form(){
     const { SERVICE_ID , TEMPLATE_ID , PUBLIC_KEY } = emailjsConfig;
@@ -11,7 +14,8 @@ function Form(){
     const [ isEmailEmpty , setIsEmailEmpty ] = useState();
     const [ isMessageEmpty , setIsMessageEmpty ] = useState();    // isNameEmpty , isEmailEmpty , isMessageEmpty 初始值設定為 undefined 讓 isButtonDisabled 變數比較好去變化
     const [ isButtonDisabled , setIsButtonDisabled ] = useState(true);
-    const [ loading , setLoading ] = useState(undefined);
+    const [ isLoading , setIsLoading ] = useState(false);
+    const [ emailSendFail , setEmailSendFail ] = useState(false);
     const [ form , setForm ] = useState({
         name : '',
         email : '',
@@ -53,10 +57,25 @@ function Form(){
         setIsButtonDisabled( isNameEmpty || isEmailEmpty || !isEmailValid || isMessageEmpty );
     } , [ isNameEmpty , isEmailEmpty , isEmailValid , isMessageEmpty ] );
 
+    // 傳送信息完成後，清除input內容、button設定disabled
+    const clearInput = (e) => {
+        setForm({
+            name: "",
+            email: "",
+            message: ""
+        });
+        setIsNameEmpty(undefined);
+        setIsEmailEmpty(undefined);
+        setIsMessageEmpty(undefined);
+        setIsButtonDisabled(true);
+    }
 
     //  透過emailjs傳送信
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsLoading(true);      // loading 效果呈現
+        clearInput();
+
         emailjs.send( 
             SERVICE_ID ,
             TEMPLATE_ID ,
@@ -69,13 +88,15 @@ function Form(){
             },
             PUBLIC_KEY )
         .then( (response) => {
-            console.log('SUCCESS!', response.status, response.text);
+            setEmailSendFail(false);
+            setTimeout( () => {
+                setIsLoading(false);
+            }, 2800 );
         })
         .catch( (error) => {
-            console.log('FAILED...', error);
+            setEmailSendFail(true);
          });
     }
-
 
     return(
     <>
@@ -124,10 +145,16 @@ function Form(){
                             border-2 py-2.5 justify-center rounded-md w-full flex items-center gap-3`}
                 disabled={isButtonDisabled}
             >
-                <Sendemail className="sendEmailButton__icon--hover"/>
                 <span className="sendEmailButton__text--hover">Send Email</span>
+                <Sendemail className="sendEmailButton__icon--hover"/>
             </button>
         </form>
+
+        <div className={`py-4 px-5 rounded gap-5 bg-dark-gray bottom-3 right-0 md:right-5 flex items-center ${ isLoading ? ( emailSendFail? "fixed" : "sendEmailResultBox fixed") : "hidden" }`}>
+            <img src={ emailSendFail ? error : done } alt="" />
+            <span className='pr-10'>{ emailSendFail ? "Oops! Please send it again. Thank you" : "Mail sent" }</span>
+            <Close className='w-3.5 h-3.5 absolute top-2 right-3 cursor-pointer' onClick={ () => setIsLoading(false) }/>
+        </div>
     </>
     )
 }
