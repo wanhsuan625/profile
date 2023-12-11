@@ -13,7 +13,7 @@ function Header() {
                                 md:py-12 md:px-3 md:text-left md:mx-8 lg:max-w-xl lg:pl-14 lg:pb-16 lg:pt-18'>
                 <h1 className='text-3xl font-bold xs:text-4xl lg:text-5xl'>Frontend developer creating my own website</h1>
                 <p className='pt-6 pb-5 xs:text-base md:pr-5 lg:py-8'>
-                    Hello, I'm Bonnie , a software engineer from Taiwan.
+                    Hello, I'm Bonnie , a software engineer from Taichung.
                     I like working on interesting and creative projects that challenge me.
                 </p>
            
