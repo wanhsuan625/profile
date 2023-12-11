@@ -1,5 +1,5 @@
 import React from 'react';
-import selfie from '../images/照片.jpg';
+import photo from '../images/photo.jpg';
 import { ReactComponent as Github } from '../images/github.svg';
 import { ReactComponent as Linkedin } from '../images/linkedin.svg';
 
@@ -9,14 +9,17 @@ function About(){
         <section 
             id='about'
             className='bg-black mt-14 rounded-md max-w-300 flex flex-wrap px-8 py-14
-                        md:mt-28 md:justify-between md:mx-7 xl:p-14 xl:mx-auto'>
-            <img src={selfie} className='w-full max-h-75 object-cover md:ml-4 md:w-1/4' alt="" />
+                        md:mt-28 md:justify-between lg:items-center md:mx-7 xl:p-14 xl:mx-auto'>
+            <img src={photo} className='w-full max-h-75 object-cover md:ml-4 md:w-1/4' alt="" />
             
             <article className='text-white md:w-2/3'>
                 <div>
                     <h1 className='text-4xl font-medium pt-6 md:pt-0 md:pb-2 lg:text-5xl lg:font-medium'>My Background</h1>
-                    <p className='my-8'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugit, excepturi dignissimos commodi et soluta quas tempore officiis alias odio? A dignissimos voluptate suscipit perferendis sed. Quae vero corrupti voluptatum, molestiae accusantium unde eius earum eaque asperiores ad omnis voluptate molestias ab maiores iste quibusdam amet, modi quo minus quos.
+                    <p className='mt-4 mb-6 font-light lg:text-lg'>
+                        I am a frontend developer from Taichung. I’ve been self-teaching myself web development and participated in a six-month bootstrap program, WeHelp. I like to code out clean, intuitive user interfaces from designs.
+                        <br />
+                        <br />
+                        In my free time, I enjoy practicing web development, watching films and videos on various themes, socializing outdoors, and spending time with family and friends.
                     </p>
                 </div>
 
