@@ -7,7 +7,7 @@ import cover_faqAccordingCard from './images/cover-project-6-faqAccordingCard.pn
 import cover_newletterSignUp from './images/cover-project-7-newletterSignUp.png';
 import cover_singlePageDesign from './images/cover-project-8-singlePageDesign.png';
 import cover_githubUserSearch from './images/cover-project-9-githubUserSearch.png';
-
+import cover_bookmarkPage from './images/cover-project-10-bookmarkPage.png';
 import cover_taipeiDayTrip from './images/cover-project-11-taipeiDayTrip.png';
 
 export const projects =  [
@@ -86,7 +86,7 @@ export const projects =  [
     {
         "id" :  "9",
         "title" : "Github User Search",
-        "description" : "Implement GitHub user search using the GitHub API and incorporate a dark/light theme switch.",
+        "description" : "Implement GitHub user search using the GitHub API and add a dark/light theme switch.",
         "liveSite" : "https://wanhsuan625.github.io/frontend-mentor/9.github-user-search-app/index.html",
         "codePage" : "https://github.com/wanhsuan625/frontend-mentor/tree/main/9.github-user-search-app",
         "cover" : cover_githubUserSearch,
@@ -95,11 +95,11 @@ export const projects =  [
     {
         "id" :  "10",
         "title" : "Bookmark Page",
-        "description" : "",
-        "liveSite" : "",
-        "codePage" : "",
-        "cover" : "",
-        "skill":[]
+        "description" : "A landing page for imaginary business 'bookmark'",
+        "liveSite" : "https://bookmark-landing-page-master-coral.vercel.app/",
+        "codePage" : "https://github.com/wanhsuan625/bookmark-landing-page-master",
+        "cover" : cover_bookmarkPage,
+        "skill":[ "React.js" , "Tailwindcss" , "CSS" , "Next.js" , "Landing page" ]
     },
     {
         "id" :  "11",
