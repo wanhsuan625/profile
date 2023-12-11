@@ -11,6 +11,8 @@ module.exports = {
         '15': '60px',
         '17': '68px',
         '18': '72px',
+        '19': '76px',
+        '35': '140px',
         '65': '260px',
         '75': '300px',
         '100': '400px',
@@ -21,6 +23,7 @@ module.exports = {
         'pink': '#D46A98',
         'light-blue': '#86B9DF',
         'gray': '#A8A8A8',
+        'dark-gray': '#363636',
       },
       transitionProperty: {
         'width': 'width',
@@ -49,6 +52,7 @@ module.exports = {
       },
       minHeight: {
         '18' : '72px',
+        '125' : '500px',
       },
       maxWidth: {
         '300' : '1200px',
