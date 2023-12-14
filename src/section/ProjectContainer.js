@@ -8,7 +8,7 @@ function Showcase(){
 
     return (
     <>
-        <section id='project' className='max-w-300 mx-auto pb-10 px-4 md:px-7 xl:px-0'>
+        <section id='project' className='max-w-300 mx-auto pb-10 px-4 md:px-7 xl:px-0 pt-20 md:pt-36 lg:pt-20 lg:mt-28'>
             <h2
                 className='text-black text-center text-3xl font-medium pb-9
                             lg:text-5xl lg:font-medium lg:pb-12'

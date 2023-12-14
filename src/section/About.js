@@ -6,10 +6,9 @@ import { ReactComponent as Linkedin } from '../images/linkedin.svg';
 function About(){
     return (
     <>
-        <section 
-            id='about'
-            className='bg-black mt-14 rounded-md max-w-300 flex flex-wrap px-8 py-14
-                        md:mt-28 md:justify-between lg:items-center md:mx-7 xl:p-14 xl:mx-auto'>
+    <div className='pt-15 mb-20' id='about'>
+        <section className='bg-black rounded-md max-w-300 flex flex-wrap px-8 py-14
+                            mt-5 md:justify-between lg:items-center md:mx-7 xl:p-14 xl:mx-auto'>
             <img src={photo} className='w-full max-h-75 object-cover md:ml-4 md:w-1/4' alt="" />
             
             <article className='text-white md:w-2/3'>
@@ -36,6 +35,7 @@ function About(){
                 </div>
             </article>
         </section>
+    </div>
     </>
     )
 }
