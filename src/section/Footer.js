@@ -37,10 +37,10 @@ function Footer() {
                 <div>
                     <h1 className="text-light-blue text-xl font-bold mb-4 lg:text-2xl">Social</h1>
                     <div className="flex gap-5 mt-2 xs:gap-7">
-                        <a href="https://github.com/wanhsuan625" target='_blank'>
+                        <a href="https://github.com/wanhsuan625" target='_blank' rel="noreferrer noopener">
                             <Github className='w-6 h-6 fill-gray hover:fill-white'/>
                         </a>
-                        <a href="https://www.linkedin.com/in/wanhsuan-chan-4942ab237/" target='_blank'>
+                        <a href="https://www.linkedin.com/in/wanhsuan-chan-4942ab237/" target='_blank' rel="noreferrer noopener">
                             <Linkedin className='w-6 h-6 fill-gray hover:fill-white'/>
                         </a>
                     </div>

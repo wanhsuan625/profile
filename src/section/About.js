@@ -26,10 +26,10 @@ function About(){
                     <a href="#contact">
                         <button className='py-2 px-7 border-2 rounded-md border-light-blue bg-light-blue hover:bg-transparent hover:text-light-blue'>Get in touch</button>
                     </a>
-                    <a href="https://github.com/wanhsuan625" target='_blank'>
+                    <a href="https://github.com/wanhsuan625" target='_blank' rel="noreferrer noopener">
                         <Github className='w-6 h-6 cursor-pointer ml-3 hover:fill-gray hover:scale-110'/>
                     </a>
-                    <a href="https://www.linkedin.com/in/wanhsuan-chan-4942ab237/" target='_blank'>
+                    <a href="https://www.linkedin.com/in/wanhsuan-chan-4942ab237/" target='_blank' rel="noreferrer noopener">
                         <Linkedin className='w-6 h-6 cursor-pointer hover:fill-gray hover:scale-110'/>
                     </a>
                 </div>
