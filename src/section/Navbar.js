@@ -35,18 +35,30 @@ function Navbar(){
 
             <ul className={`text-gray menu ${ isHidden ? 'w-0 overflow-hidden' : 'w-1/2 xs:w-62.5'} transition-width duration-300`}>
                 <li>
-                    <a href='#about' className='block menu__item menu__item--hover menu__item--active'>About</a>
+                    <a href='#about'
+                       className='block menu__item menu__item--hover menu__item--active'
+                       onClick={()=>{setIsHidden(true)}}
+                    >About
+                    </a>
                 </li>
                 <li>
-                    <a href='#project' className='block menu__item menu__item--hover menu__item--active'>Project</a>
+                    <a href='#project'
+                       className='block menu__item menu__item--hover menu__item--active'
+                       onClick={()=>{setIsHidden(true)}}
+                    >Project
+                    </a>
                 </li>
                 <li>
-                    <a href={cv} download className='cv menu__item menu__item--hover menu__item--active flex justify-center items-center gap-1 cursor-pointer'>
+                    <a href={cv}
+                       download
+                       className='cv menu__item menu__item--hover menu__item--active flex justify-center items-center gap-1 cursor-pointer'
+                       onClick={()=>{setIsHidden(true)}}
+                    >
                         <Download className='w-4 h-4 downloadIcon--hover md:fill-gray'/>CV
                     </a>
                 </li>
                 <li>
-                    <a href="#contact">
+                    <a href="#contact" onClick={()=>{setIsHidden(true)}}>
                         <button className='menu__button menu__button--hover menu__button--active'>Get in Touch</button>
                     </a>
                 </li>
@@ -65,10 +77,11 @@ function Navbar(){
             <img 
                 src={ isHidden ? bars : close }
                 onClick={unfoldNavbar}
-                className={`w-6 h-6 cursor-pointer md:hidden z-10 ${ isHidden ? null : 'fixed right-5 hover:scale-125' }`}
+                className={`w-6 h-6 cursor-pointer md:hidden z-20 ${ isHidden ? null : 'fixed right-5 hover:scale-125' }`}
                 alt=""/>
         </nav>
     </section>
+    <div className={`${ isHidden ? null : "background__black" }`} onClick={() => { setIsHidden(true);} }></div>
     </>
     )
 }
