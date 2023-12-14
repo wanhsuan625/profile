@@ -5,7 +5,7 @@ import close from '../images/close.svg';
 import { ReactComponent as Download } from '../images/download.svg';
 import { ReactComponent as Github } from '../images/github.svg';
 import { ReactComponent as Linkedin } from '../images/linkedin.svg';
-import cv from '../cv/Bonnie Chan.pdf';
+import cv from '../cv/BonnieChan.pdf';
 
 function Navbar(){
     const [ isHidden , setIsHidden ] = useState(true);

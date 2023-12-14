@@ -3,7 +3,7 @@ import { ReactComponent as Download } from '../images/download.svg';
 import { ReactComponent as Email } from '../images/email.svg';
 import { ReactComponent as Github } from '../images/github.svg';
 import { ReactComponent as Linkedin } from '../images/linkedin.svg';
-import cv from '../cv/Bonnie Chan.pdf';
+import cv from '../cv/BonnieChan.pdf';
 import logoicon from '../images/logoicon.png';
 
 function Footer() {
