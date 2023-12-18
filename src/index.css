@@ -7,6 +7,7 @@
     --pink: #D46A98;
     --light-blue: #86B9DF;
     --gray: #A8A8A8;
+    --dark-gray: #363636;
 }
 
 *{
@@ -110,6 +111,11 @@ html , body{
     border-radius: 8px;
     color: var(--pink);
     font-weight: 500;
+}
+
+/*  */
+.shadow-up{
+    box-shadow: 0 0 20px 0 rgba(80, 80, 80, 0.3);
 }
 
 /* ----- CONTACT BACKGROUND ----- */
