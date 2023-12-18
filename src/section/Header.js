@@ -26,7 +26,7 @@ function Header() {
 
             <aside className='hidden md:block w-72 absolute right-0 lg:w-80'>
                 <img src={computer} className='grayscale h-full w-full rounded-b-lg' alt="" />
-                <div className='absolute bottom-0 py-2 px-5 bg-black w-full h-15 rounded-b-lg flex items-center justify-end gap-6'>
+                <div className='absolute bottom-0 py-2 px-5 bg-black w-full h-15 rounded-b-lg flex items-center justify-end gap-6 z-1'>
                     <a href="https://github.com/wanhsuan625" target='_blank'>
                         <Github className='h-9 w-9 cursor-pointer hover:fill-pink'/>
                     </a>
