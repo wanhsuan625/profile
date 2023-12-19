@@ -1,6 +1,6 @@
 import React , { useState } from 'react';
 import Project from '../component/Project';
-import { projects as projectData } from '../projectData';
+import { projects as projectData } from '../data/projectData';
 
 function Showcase(){
     let [projects, setProjects] = useState([]);
