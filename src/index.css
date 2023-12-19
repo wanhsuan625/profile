@@ -115,7 +115,7 @@ html , body{
 
 /*  */
 .shadow-up{
-    box-shadow: 0 0 20px 0 rgba(80, 80, 80, 0.3);
+    box-shadow: 0 7px 15px 0 rgba(80, 80, 80, 0.3);
 }
 
 /* ----- CONTACT BACKGROUND ----- */
