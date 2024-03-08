@@ -8,7 +8,8 @@ import cover_newletterSignUp from '../images/cover-project-7-newletterSignUp.png
 import cover_singlePageDesign from '../images/cover-project-8-singlePageDesign.png';
 import cover_githubUserSearch from '../images/cover-project-9-githubUserSearch.png';
 import cover_bookmarkPage from '../images/cover-project-10-bookmarkPage.png';
-import cover_taipeiDayTrip from '../images/cover-project-11-taipeiDayTrip.png';
+import cover_countriesAPI from '../images/cover-project-11-countriesAPI.png';
+import cover_taipeiDayTrip from '../images/cover-project-12-taipeiDayTrip.png';
 
 export const projects =  [
     {
@@ -103,6 +104,15 @@ export const projects =  [
     },
     {
         "id" :  "10",
+        "title" : "Where in the world",
+        "description" : "A mutil page for searching country and its information",
+        "liveSite" : "https://rest-countries-api-with-color-theme-switcher-solution-delta.vercel.app/",
+        "codePage" : "https://github.com/wanhsuan625/REST-Countries-API-with-color-theme-switcher-solution",
+        "cover" : cover_countriesAPI,
+        "skill":[ "React.js" , "Tailwindcss" , "CSS" , "API" , "Multi page" ]
+    },
+    {
+        "id" :  "11",
         "title" : "Taipei Day Trip",
         "description" : "An e-commerce website which enables you to discover several famous attractions in Taipei ",
         "liveSite" : "http://54.199.123.84:3000/",
